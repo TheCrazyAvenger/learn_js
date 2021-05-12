@@ -1,17 +1,21 @@
-let str = '             dafkljafkdjklafjkldjklfjakljfdkljaklfjkldjalfjdajfl         ';
+const arr = ['1000', '2000', '3000', '4000'];
 
-const editString = function(a) {
-    if(typeof a === 'number'){
-        return('Не строка');
+arr.forEach(num => {
+    if(num.charAt(0) === '2' || num.charAt(0) === '4') console.log(num);
+})
+
+const arr1 = Array.from({length: 100}, (_, index) => index + 1);
+
+const checkNumbers = (number) => {
+    if(number === 1) return false;
+
+    for (let i = 2; i < number; i++){
+        if (number % i === 0) return false;
     }
-    
-    a = a.replace(/(^\s*)|(\s*)$/g, '');
 
-    if(a.length >= 30) {
-        a= a.slice(0, 30) + '...';
-    }
-
-    return a;
+    return true;
 }
 
-console.log(editString(str));
+const result = arr1.filter(checkNumbers);
+
+console.log(result);
