@@ -1,50 +1,46 @@
 'use strict'
 
-let money = +prompt('Сколько ты зарабатываешь?'),
-    income = 'Стипендия',
-	addExpenses = prompt(
-		'Перечислите возможные расходы за рассчитываемый период через запятую'
-	),
-	deposit = confirm('Есть ли у вас депозит в банке?'),
-	mission = 150000,
-	expenses1 = prompt('Введите обязательную статью расходов?'),
-	amount1 = +prompt('Во сколько это обойдется?'),
-	expenses2 = prompt('Введите обязательную статью расходов?'),
-	amount2 = +prompt('Во сколько это обойдется?'),
-	budgetMonth = money - amount1 - amount2,
-	period = Math.ceil(mission / budgetMonth),
-	budgetDay = Math.floor(budgetMonth / 30);
-
-const showTypeOf = function (data) {
-    console.log(data, typeof data);
-}
+const mission = 150000;
+const income = 'Стипендия';
+const money = +prompt('Сколько ты зарабатываешь?');
+const addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+const deposit = confirm('Есть ли у вас депозит в банке?');
+const expenses1 = prompt('Введите обязательную статью расходов?');
+const amount1 = +prompt('Во сколько это обойдется?');
+const expenses2 = prompt('Введите обязательную статью расходов?');
+const amount2 = +prompt('Во сколько это обойдется?');
+	
+const showTypeOf = (data) => console.log(data, typeof data);
 showTypeOf(money);
 showTypeOf(deposit);
 showTypeOf(income);
+console.log(addExpenses.split(', '));
 
-console.log(addExpenses.length);
+const getExpensesMonth = () => { return amount1 + amount2; }
 
+const getAccumulatedMonth = () => { return money - amount1 - amount2; }
+
+const getTargetMonth = () => { return mission / accumulatedMonth; }
+
+console.log ('Сумма всех обязательных расходов: ', getExpensesMonth());
+
+const accumulatedMonth = getAccumulatedMonth();
+const budgetDay = Math.floor(accumulatedMonth / 30);
 console.log('Дневной бюджет: ', budgetDay);
-console.log('Бюджет на месяц: ', budgetMonth);
+console.log('Бюджет на месяц: ', accumulatedMonth);
 
 console.log('Цель заработать ' + mission + ' рублей');
+const period = Math.ceil(getTargetMonth());
 console.log('Период равен ' + period + ' месяцев');
 
-const showMoneyStatus = function () {
-	switch (true) {
-		case budgetDay >= 1200:
+const showStatusIncome = () => {
+	if(budgetDay >= 1200)
 			return('У вас высокий уровень дохода');
-			break;
-		case budgetDay >= 600 && budgetDay <= 1200:
+	else if(budgetDay >= 600 && budgetDay <= 1200)
 			return('У вас средний уровень дохода');
-			break;
-		case budgetDay >= 0 && budgetDay <= 600:
+	else if(budgetDay >= 0 && budgetDay <= 600)
 			return('К сожалению у вас уровень дохода ниже среднего');
-			break;
-		default:
-			return('Что то пошло не так');
-			break;
-	}
+	else
+		return('Что то пошло не так');
 }
-
-console.log(showMoneyStatus());
+console.log(showStatusIncome());
