@@ -1,6 +1,19 @@
 'use strict'
 
 const isNumber = (n) => { return !isNaN(parseFloat(n)) && isFinite(n); }
+const calculate = document.getElementById('start');
+const plusButton = document.getElementsByTagName('button')[0];
+const plusButton1 = document.getElementsByTagName('button')[1];
+const checkBoxDeposit = document.querySelector('#deposit-check');
+const possibleIncome = document.querySelectorAll('.additional_income-item');
+const dataOutput = document.querySelectorAll('.result-total');
+const monthIncome = document.querySelector('.salary-amount');
+const additionalIncomeTitle = document.querySelector('.income-title');
+const additionalIncomeAmount = document.querySelector('.income-amount');
+const obligatoryExpensesTitle = document.querySelector('.expenses-title');
+const obligatoryExpensesAmount = document.querySelector('.expenses-amount');
+const missionInput = document.querySelector('.target-amount');
+const periodSelect = document.querySelector('.period-select');
 
 let money;
 const start = () => {
@@ -8,7 +21,7 @@ const start = () => {
 		money = prompt('Сколько ты зарабатываешь?', 120000);
 	} while (!isNumber(money));
 }
-start();
+//start();
 
 let appData = {
     income: {},
@@ -95,11 +108,11 @@ let appData = {
     }
 };
 
-appData.asking();
-appData.getBudget();
-appData.getExpensesMonth();
-appData.getTargetMonth();
-console.log(appData);
+// appData.asking();
+// appData.getBudget();
+// appData.getExpensesMonth();
+// appData.getTargetMonth();
+// console.log(appData);
 
 console.log ('Сумма всех обязательных расходов: ', appData.expencesMonth);
 console.log('Дневной бюджет: ', appData.budgetDay);
@@ -109,5 +122,5 @@ console.log('Цель заработать ' + appData.mission + ' рублей'
 appData.budgetDay <= 0 && console.log('Цель не будет достигнута');
 appData.budgetDay > 0 && console.log('Цель будет достигнута за ' +  appData.period + ' месяцев');
 
-console.log(appData.showStatusIncome());
+//console.log(appData.showStatusIncome());
 console.log(appData.addExpenses);
