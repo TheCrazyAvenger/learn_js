@@ -25,7 +25,7 @@
 				<div class="data">
 					<div class="salary">
 						<div class="salary-title title">Месячный доход*</div>
-						<input type="text" class="salary-amount" placeholder="Сумма" />
+						<input type="text" class="salary-amount" data-sum placeholder="Сумма" />
 					</div>
 
 					<div class="income">
@@ -34,9 +34,10 @@
 							<input
 								type="text"
 								class="income-title"
+								data-name
 								placeholder="Наименование"
 							/>
-							<input type="text" class="income-amount" placeholder="Сумма" />
+							<input type="text" class="income-amount" data-sum placeholder="Сумма" />
 						</div>
 
 						<button class="btn_plus income_add">+</button>
@@ -47,11 +48,13 @@
 						<input
 							type="text"
 							class="additional_income-item"
+							data-name
 							placeholder="Наименование"
 						/>
 						<input
 							type="text"
 							class="additional_income-item"
+							data-name
 							placeholder="Наименование"
 						/>
 					</div>
@@ -62,9 +65,10 @@
 							<input
 								type="text"
 								class="expenses-title"
+								data-name
 								placeholder="Наименование"
 							/>
-							<input type="text" class="expenses-amount" placeholder="Сумма" />
+							<input type="text" class="expenses-amount" data-sum placeholder="Сумма" />
 						</div>
 
 						<button class="btn_plus expenses_add">+</button>
@@ -76,6 +80,7 @@
 						<input
 							type="text"
 							class="additional_expenses-item"
+							data-name
 							placeholder="название"
 						/>
 					</div>
@@ -107,7 +112,7 @@
 
 					<div class="target">
 						<span class="target-title title">Цель</span>
-						<input type="text" class="target-amount" placeholder="Сумма" />
+						<input type="text" class="target-amount" data-sum placeholder="Сумма" />
 					</div>
 
 					<div class="period">
@@ -191,7 +196,7 @@
 					</div>
 					<div class="control">
 						<button id="start">Рассчитать</button>
-						<button id="cancel">Сбросить</button>
+						<button type="reset" id="cancel">Сбросить</button>
 					</div>
 				</div>
 			</div>
