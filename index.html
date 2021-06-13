@@ -97,13 +97,12 @@
 							<span class="deposit-checkmark"></span>
 						</label>
 						<select class="deposit-bank">
-							<option value="">Процент</option>
-							<option value="4">Сбербанк</option>
-							<option value="5">Газпромбанк</option>
-							<option value="6">Тинькофф</option>
-							<option value="7">МТС Банк</option>
-							<option value="8">АбсолютБанк</option>
-							<option value="other">Другой</option>
+							<option value="0">Свой процент</option>
+							<option value="4">Сбербанк (4%)</option>
+							<option value="5">Газпромбанк (5%)</option>
+							<option value="6">Тинькофф (6%)</option>
+							<option value="7">МТС Банк (7%)</option>
+							<option value="8">АбсолютБанк (8%)</option>
 						</select>
 						<div class="deposit-calc">
 							<input type="text" class="deposit-amount" placeholder="Сумма" />
@@ -138,65 +137,73 @@
 					<div class="result-budget_month">
 						<span class="title">Доход за месяц</span>
 						<input
+							data-result
 							type="text"
 							class="result-total budget_month-value"
 							placeholder="0"
-							disabled
+							readonly
 						/>
 					</div>
 					<div class="result-budget_day">
 						<span class="title">Дневной бюджет</span>
 						<input
+							data-result
 							type="text"
 							class="result-total budget_day-value"
 							placeholder="0"
+							readonly
 						/>
 					</div>
 
 					<div class="result-expenses_month">
 						<span class="title">Расход за месяц</span>
 						<input
+							data-result
 							type="text"
 							class="result-total expenses_month-value"
 							placeholder="0"
-							disabled
+							readonly
 						/>
 					</div>
 					<div class="result-additional_income">
 						<span class="title">Возможные доходы</span>
 						<input
+							data-result
 							type="text"
 							class="result-total additional_income-value"
 							placeholder="Наименования"
-							disabled
+							readonly
 						/>
 					</div>
 					<div class="result-additional_expenses">
 						<span class="title">Возможные расходы</span>
 						<input
+							data-result
 							type="text"
 							class="result-total additional_expenses-value"
 							placeholder="Наименования"
-							disabled
+							readonly
 						/>
 					</div>
 
 					<div class="result-income_period">
 						<span class="title">Накопления за период</span>
 						<input
+							data-result
 							type="text"
 							class="result-total income_period-value"
 							placeholder="0"
-							disabled
+							readonly
 						/>
 					</div>
 					<div class="result-target_month">
 						<span class="title">Срок достижения цели в месяцах</span>
 						<input
+							data-result
 							type="text"
 							class="result-total target_month-value"
 							placeholder="Срок"
-							disabled
+							readonly
 						/>
 					</div>
 					<div class="control">
@@ -207,8 +214,5 @@
 			</div>
 		</section>
 		<script src="js/script.js"></script>
-		<script src="js/hardTusk.js"></script>
-		<!--<script src="./script/oop.js"></script>-->
-		<!-- <script src="index.js"></script> -->
 	</body>
 </html>
