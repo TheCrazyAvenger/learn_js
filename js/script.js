@@ -68,11 +68,11 @@ class AppData {
 	}
 
 	set setExpencesMonth(value) {
-		this.expencesMonth = value
+		return (this.expencesMonth = value)
 	}
 
 	set setIncomeMonth(value) {
-		this.incomeMonth = value
+		return (this.incomeMonth = value)
 	}
 
 	set setPercentDeposit(value) {
@@ -80,7 +80,7 @@ class AppData {
 	}
 
 	set setMoneyDeposit(value) {
-		return (this.monthDeposit = value)
+		return (this.moneyDeposit = value)
 	}
 
 	set setBudget(value) {
@@ -363,8 +363,8 @@ class AppData {
 
 	getInfoDeposit() {
 		if (this.deposit) {
-			this.setPercentDeposit = depositPercent.value
-			this.setMoneyDeposit = depositAmount.value
+			this.setPercentDeposit = +depositPercent.value
+			this.setMoneyDeposit = +depositAmount.value
 		}
 	}
 
